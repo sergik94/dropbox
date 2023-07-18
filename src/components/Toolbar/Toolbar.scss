@@ -1,0 +1,23 @@
+@import '../../styles/utils/variables.scss';
+
+.toolbar {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background-color: $main-color;
+
+  &__button {
+    height: 40px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: rgb(0,0,0,0);
+    border-bottom: 1px solid white;
+
+    &:hover {
+      color: $main-color;
+      background-color: white;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import './styles/utils/variables.scss';
+
+.App {
+  font-family: "Mont", sans-serif;
+  font-size: 14px;
+}
+
+.explorer {
+  display: flex;
+  height: 90vh;
+  border: 2px solid $main-color;
+}
+
+

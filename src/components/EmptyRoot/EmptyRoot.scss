@@ -1,0 +1,20 @@
+.empty-root {
+  font-size: 16px;
+  &__text {
+    margin: 24px 0 16px;
+  }
+
+  &__item {
+    margin-bottom: 6px;
+  }
+
+  &__link {
+    &:-webkit-any-link {
+      color: blue;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

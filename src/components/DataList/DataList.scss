@@ -1,0 +1,47 @@
+.datalist { 
+  table {
+    width: 100%;
+  }
+
+  thead {
+    background-color: gray;
+    color: white;
+    font-weight: 700;
+  }
+
+  tr {
+    height: 40px;
+    padding-left: 20px;
+  }
+
+  td {
+    padding-left: 20px;
+  }
+
+  &__title {
+    width: 80%;
+  }
+
+  &__item {
+    display:  flex;
+    align-items: center;
+    &::before {
+      content: '';
+      display: block;
+      height: 24px;
+      width: 24px;
+      margin-right: 10px;
+    }
+
+    &--folder::before {
+      background: url("../../helpers/icons/icons-folder.svg") no-repeat  center / contain;
+    }
+
+    &--file {
+      background-color: inherit;
+      &::before {
+        background: url("../../helpers/icons/icons-file.svg") no-repeat  center / contain;
+      }
+    }
+  }
+}

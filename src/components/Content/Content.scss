@@ -1,0 +1,52 @@
+@import '../../styles/utils/variables.scss';
+
+.content {
+  border-left: 2px solid $main-color;
+  flex-grow: 1;
+  overflow-y: scroll;
+  position: relative;
+
+  &__navigation {
+    margin-bottom: 16px;
+    position: fixed;
+  }
+
+  &__table {
+    margin-top: 40px;
+  }
+
+  &__error {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 24px;
+    color: red;
+  }
+
+  &__link {
+    &:-webkit-any-link {
+      color: blue;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__token {
+    display: block;
+    width: 200px;
+    height: 40px;
+    margin: 40px auto 0;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: orange;
+    color: black;
+    border-radius: 5px;
+
+    &:hover {
+      color: $main-color;
+      background-color: white;
+      border: 2px solid $main-color;
+    }
+  }
+}

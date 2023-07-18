@@ -1,0 +1,37 @@
+@import '../../styles/utils/variables.scss';
+
+.navigation {
+  height: 40px;
+  border-bottom: 1px solid $main-color;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+  padding-left: 30px;
+
+  &__link {
+    display: block;
+    color: gray;
+    margin-right: 10px;
+    font-size: 18px;
+
+    &:-webkit-any-link {
+      color: gray;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child {
+      pointer-events: none;
+    }
+  }
+
+  &__slash {
+    font-size: 24px;
+    padding-right: 10px;
+    color: gray;
+  }
+}
