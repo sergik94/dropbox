@@ -1,5 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { normalizeFolderName } from '../../helpers/functions/normalizeFolderName';
+import { Dropdown } from '../Dropdown';
 import './Navigation.scss';
 
 type Props = {
@@ -8,23 +10,39 @@ type Props = {
 
 export const Navigation: React.FC<Props> = ({ paths }) => {
   const location = useLocation();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [visibleLinks, setVisibleLinks] = useState(5);
   let counter = 0;
 
+  useEffect(() => {
+    if (windowWidth < 720) {
+      setVisibleLinks(2);
+    } else {
+      setVisibleLinks(5);
+    }
+  }, [windowWidth]);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   return (
-    <div className="content__navigation navigation">
+    <div className="content-field__navigation navigation">
+      {paths.length > visibleLinks && <Dropdown paths={paths} />}
       {location.pathname === '/' ? (
         <p className="navigation__link">root</p>
       ) : (
-        paths.map((path) => {
+        paths.slice(-visibleLinks).map((path) => {
           counter += 1;
-          const namesList = path.split('/');
-          let folderName = namesList[namesList.length - 1]
-            .split('%20')
-            .join(' ');
-
-          if (folderName === '') {
-            folderName = 'root';
-          }
+          const folderName = normalizeFolderName(path);
 
           return (
             <Fragment key={path + counter}>

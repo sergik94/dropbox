@@ -3,12 +3,29 @@
 .App {
   font-family: "Mont", sans-serif;
   font-size: 14px;
+  overflow: hidden;
 }
 
 .explorer {
   display: flex;
-  height: 90vh;
+  height: 100vh;
   border: 2px solid $main-color;
+  overflow: hidden;
+
+  @media (max-width: 540px) {
+    flex-direction: column;
+  }
+
+  &__content {
+    @media (max-width: 540px) {
+      order: 1;
+      flex-grow: 1;
+    }
+  }
+
+  &__toolbar {
+    @media (max-width: 540px) {
+      order: 2;
+    }
+  }
 }
-
-

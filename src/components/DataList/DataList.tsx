@@ -29,7 +29,7 @@ export const DataList: React.FC<Props> = ({
   const order = searchParams.get('order');
 
   return (
-    <div className="content__table datalist">
+    <div className="content-field__table datalist">
       <table>
         <thead>
           <tr>
@@ -50,7 +50,7 @@ export const DataList: React.FC<Props> = ({
                   {theadName === 'Modified' && !isFiles ? (
                     ''
                   ) : (
-                    <span className="is-flex is-flex-wrap-nowrap has-text-white">
+                    <span className="has-text-white">
                       {theadName}
                       <SearchLink params={newSortParams}>
                         <span className="icon has-text-white">

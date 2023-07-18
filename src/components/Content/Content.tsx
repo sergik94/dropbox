@@ -86,7 +86,7 @@ export const Content: React.FC<Props> = ({ paths }) => {
   }, [link]);
 
   return (
-    <div className="explorer__content content">
+    <div className="explorer__content content-field">
       {isClick && (
         <NotImplemented
           callback={toggleClick}
@@ -109,10 +109,10 @@ export const Content: React.FC<Props> = ({ paths }) => {
       )}
       {isError && !isLoading && (
         <>
-          <p className="content__error">
+          <p className="content-field__error">
             Something went wrong, try to generate a token again on{' '}
             <a
-              className="content__link"
+              className="content-field__link"
               href="https://www.dropbox.com/developers/apps/"
               target="_blank"
               rel="noreferrer"
@@ -121,7 +121,7 @@ export const Content: React.FC<Props> = ({ paths }) => {
             </a>{' '}
             and click <b>Refresh token</b>
           </p>
-          <button className="content__token" onClick={refreshToken}>
+          <button className="content-field__token" onClick={refreshToken}>
             Refresh token
           </button>
         </>
