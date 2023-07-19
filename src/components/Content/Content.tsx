@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { useState, useEffect, useMemo } from 'react';
 import { useParams, useLocation, useSearchParams } from 'react-router-dom';
 import './Content.scss';
@@ -41,8 +42,6 @@ export const Content: React.FC<Props> = ({ paths }) => {
     setLoading(true);
     try {
       const data = await getRootFolder(TOKEN, path);
-
-      window.console.log(data);
 
       setContent(data.result.entries);
     } catch (error) {
@@ -110,7 +109,7 @@ export const Content: React.FC<Props> = ({ paths }) => {
       {isError && !isLoading && (
         <>
           <p className="content-field__error">
-            Something went wrong, try to generate a token again on{' '}
+            Something went wrong. You may have entered the wrong address in the address bar. If not, try to generate a token again on{' '}
             <a
               className="content-field__link"
               href="https://www.dropbox.com/developers/apps/"

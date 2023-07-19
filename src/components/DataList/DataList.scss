@@ -25,6 +25,7 @@
   td {
     padding-left: 20px;
     font-size: 14px;
+    line-height: 40px;
   }
 
   &__title {
@@ -49,6 +50,8 @@
     }
 
     &--file {
+      font-size: inherit;
+      font-family: inherit;
       background-color: inherit;
       &::before {
         background: url("../../helpers/icons/icons-file.svg") no-repeat  center / contain;

@@ -35,7 +35,7 @@ function App() {
 
     const token = JSON.parse(window.localStorage.getItem('token') || '[]');
 
-    if (token[0] !== '') {
+    if (token[0]) {
       setAuth(true);
     }
   }, []);

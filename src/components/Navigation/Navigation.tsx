@@ -18,7 +18,7 @@ export const Navigation: React.FC<Props> = ({ paths }) => {
     if (windowWidth < 720) {
       setVisibleLinks(2);
     } else {
-      setVisibleLinks(5);
+      setVisibleLinks(4);
     }
   }, [windowWidth]);
 

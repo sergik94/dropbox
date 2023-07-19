@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
 import './Authorization.scss';
 
@@ -52,15 +53,20 @@ export const Authorization: React.FC<Props> = ({
                 </a>
               </li>
               <li className="authorization__item">
-                Create an application on{' '}
+                Create or select an existing app on{' '}
                 <a
                   className="authorization__link"
-                  href="https://www.dropbox.com/developers/"
+                  href="https://www.dropbox.com/developers/apps/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Dropbox Developers
                 </a>
+              </li>
+              <li className="authorization__item">
+                On the <strong>Permissions</strong> tab, click the{' '}
+                <i>files.content.read</i>, <i>file_requests.read</i> checkboxes
+                and accept your selection by clicking Submit.
               </li>
               <li className="authorization__item">
                 On the <strong>Settings</strong> tab, generate an access token
