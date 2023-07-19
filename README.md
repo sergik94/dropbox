@@ -1,6 +1,6 @@
 Dear User,
 
-welcome to Customer File Explorer. All the steps you need to take for using this App are are listed inside the app.
+welcome to Customer File Explorer. All the steps you need to take for using this App are listed inside the app.
 
 The program is available at the [link](https://sergik94.github.io/dropbox/)
 
